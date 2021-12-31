@@ -1,0 +1,9 @@
+body{
+    background-image:url("../assets/imgs/background-img.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+ header h1 {
+     color: white;
+ }
