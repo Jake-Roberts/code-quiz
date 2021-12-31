@@ -65,16 +65,30 @@ btn.addEventListener('click', function(){
     countInterval = setInterval(function(){
         if (timeLeft > 0 ){
             timeLeft--;
-            timeEL.innerHTML = timeLeft + "Seconds left"
+            timeEL.innerHTML = "You have " + timeLeft + "Seconds left"
         } else {
             // clearInterval();
         }
-    10000});
+    },
+    1000);
     start(btn)
 })
 
-// questions after button has been clicked
+// questions and answer buttons
 var start = function(btn){
     startEl.innerHTML = "";
     questions.innerHTML = myQuestions[count].question
+    answersEl.innerHTML = "";
+    for (var i = 0; i < myQuestions[count]; i++){
+        var buttonsEl = document.createElement("button")
+    buttonsEl.addEventListener('click', correctAnswrs)
+    buttonsEl.innerHTML = myQuestions[count].answer[i];
+    answersEl.append(buttonsEl);
+    buttonsEl.setAttribute('style', 'color:white', 'text-align: left')
+
+    }
+}
+
+var correctAnswrs = function(event){
+    console.log(event.target)
 }
