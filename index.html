@@ -8,19 +8,27 @@
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-    <main>
-        <form id="question-form" class="form">
-            <div>
-                <p class="qst1">Placeholder</p>
-                <select name="question1" id="answers1">
-                <option value="">A</option>
-                <option value="">B</option>
-                <option value="">C</option>
-                <option value="">D</option>
-                </select>
-            </div>
+    <header>
+        <h1>HighScores</h1>
+    </header>
+    <!--Count down div-->
+    <div id = "clock">
 
-        </form>
+    </div>
+    <!--Start quiz button-->
+    <div id = "start-quiz">
+        <button id="go-quiz">Start</button>
+    </div>
+    <!-- question section -->
+    <main id="contain">
+        <section id="qst-sect">
+            <!-- where the actual question will go  -->
+            <div id="question"></div>
+            <!-- where the answers will go -->
+            <div id="answers"></div>
+            <!-- Scores will go here -->
+            <div id="score"></div>
+        </section>
     </main>
     <script src="./assets/main.js"></script>
 </body>
