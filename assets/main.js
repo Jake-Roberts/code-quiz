@@ -5,12 +5,18 @@
 
 
 // add the variables needed for later
-var timeEL = document.getElementById("#clock")
-var timeLeft = 50;
-var btn = document.getElementById("#go-quiz")
+var timeEL = document.querySelector("#clock")
+var timeLeft = 70;
+var scores = 0;
+var btn = document.querySelector("#go-quiz")
 var startEl = document.querySelector("#start-quiz")
 var questions = document.querySelector("#question")
 var answersEl = document.querySelector("#answers")
+var count = 0
+var countInterval;
+timeEL.innerHTML = "You have " + timeLeft + " Seconds left!!!!";
+console.log(timeEL)
+
 
 
 // creat an object with the question properties
@@ -37,3 +43,38 @@ const myQuestions = [
         },
 ];
 
+console.log(myQuestions);
+var count = 0
+var countInterval;
+// create function that is triggered once btn is clicked
+// function(){
+// countInterval.setInterval(function(){
+//     if (timeLeft > 0 ){
+//         timeLeft--;
+//         timeEL.textContent = timeLeft + "Seconds left"
+//     } else (
+//         clearInterval()
+//     )
+// console.log(startQuiz)
+    
+// })
+// }
+// call back for startQuiz
+btn.addEventListener('click', function(){
+    console.log("hey you click me")
+    countInterval = setInterval(function(){
+        if (timeLeft > 0 ){
+            timeLeft--;
+            timeEL.innerHTML = timeLeft + "Seconds left"
+        } else {
+            // clearInterval();
+        }
+    10000});
+    start(btn)
+})
+
+// questions after button has been clicked
+var start = function(btn){
+    startEl.innerHTML = "";
+    questions.innerHTML = myQuestions[count].question
+}
